@@ -1993,6 +1993,147 @@ public static class ActivatedCarbonFilterMonitoringClusterReplacementProductStru
     return output.toString();
   }
 }
+public static class MessagesClusterMessageResponseOptionStruct {
+  public Long messageResponseID;
+  public String label;
+  public MessagesClusterMessageResponseOptionStruct(
+    Long messageResponseID,
+    String label
+  ) {
+    this.messageResponseID = messageResponseID;
+    this.label = label;
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder output = new StringBuilder();
+    output.append("MessagesClusterMessageResponseOptionStruct {\n");
+    output.append("\tmessageResponseID: ");
+    output.append(messageResponseID);
+    output.append("\n");
+    output.append("\tlabel: ");
+    output.append(label);
+    output.append("\n");
+    output.append("}\n");
+    return output.toString();
+  }
+}
+public static class MessagesClusterPresentMessageRequestStruct {
+  public byte[] messageID;
+  public Integer priority;
+  public Integer messageControl;
+  public Long startTime;
+  public Integer duration;
+  public String messageText;
+  public ArrayList<ChipStructs.MessagesClusterMessageResponseOptionStruct> responses;
+  public MessagesClusterPresentMessageRequestStruct(
+    byte[] messageID,
+    Integer priority,
+    Integer messageControl,
+    Long startTime,
+    Integer duration,
+    String messageText,
+    ArrayList<ChipStructs.MessagesClusterMessageResponseOptionStruct> responses
+  ) {
+    this.messageID = messageID;
+    this.priority = priority;
+    this.messageControl = messageControl;
+    this.startTime = startTime;
+    this.duration = duration;
+    this.messageText = messageText;
+    this.responses = responses;
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder output = new StringBuilder();
+    output.append("MessagesClusterPresentMessageRequestStruct {\n");
+    output.append("\tmessageID: ");
+    output.append(Arrays.toString(messageID));
+    output.append("\n");
+    output.append("\tpriority: ");
+    output.append(priority);
+    output.append("\n");
+    output.append("\tmessageControl: ");
+    output.append(messageControl);
+    output.append("\n");
+    output.append("\tstartTime: ");
+    output.append(startTime);
+    output.append("\n");
+    output.append("\tduration: ");
+    output.append(duration);
+    output.append("\n");
+    output.append("\tmessageText: ");
+    output.append(messageText);
+    output.append("\n");
+    output.append("\tresponses: ");
+    output.append(responses);
+    output.append("\n");
+    output.append("}\n");
+    return output.toString();
+  }
+}
+public static class MessagesClusterMessageStruct {
+  public byte[] messageID;
+  public Integer priority;
+  public Integer messageControl;
+  public Long startTime;
+  public Integer duration;
+  public String messageText;
+  public ArrayList<ChipStructs.MessagesClusterMessageResponseOptionStruct> responses;
+  public Integer fabricIndex;
+  public MessagesClusterMessageStruct(
+    byte[] messageID,
+    Integer priority,
+    Integer messageControl,
+    Long startTime,
+    Integer duration,
+    String messageText,
+    ArrayList<ChipStructs.MessagesClusterMessageResponseOptionStruct> responses,
+    Integer fabricIndex
+  ) {
+    this.messageID = messageID;
+    this.priority = priority;
+    this.messageControl = messageControl;
+    this.startTime = startTime;
+    this.duration = duration;
+    this.messageText = messageText;
+    this.responses = responses;
+    this.fabricIndex = fabricIndex;
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder output = new StringBuilder();
+    output.append("MessagesClusterMessageStruct {\n");
+    output.append("\tmessageID: ");
+    output.append(Arrays.toString(messageID));
+    output.append("\n");
+    output.append("\tpriority: ");
+    output.append(priority);
+    output.append("\n");
+    output.append("\tmessageControl: ");
+    output.append(messageControl);
+    output.append("\n");
+    output.append("\tstartTime: ");
+    output.append(startTime);
+    output.append("\n");
+    output.append("\tduration: ");
+    output.append(duration);
+    output.append("\n");
+    output.append("\tmessageText: ");
+    output.append(messageText);
+    output.append("\n");
+    output.append("\tresponses: ");
+    output.append(responses);
+    output.append("\n");
+    output.append("\tfabricIndex: ");
+    output.append(fabricIndex);
+    output.append("\n");
+    output.append("}\n");
+    return output.toString();
+  }
+}
 public static class DoorLockClusterCredentialStruct {
   public Integer credentialType;
   public Integer credentialIndex;

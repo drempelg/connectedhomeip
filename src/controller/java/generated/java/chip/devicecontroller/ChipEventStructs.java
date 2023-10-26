@@ -1154,6 +1154,87 @@ public static class RvcOperationalStateClusterOperationCompletionEvent {
     return output.toString();
   }
 }
+public static class MessagesClusterMessageQueuedEvent {
+  public byte[] messageID;
+  public MessagesClusterMessageQueuedEvent(
+    byte[] messageID
+  ) {
+    this.messageID = messageID;
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder output = new StringBuilder();
+    output.append("MessagesClusterMessageQueuedEvent {\n");
+    output.append("\tmessageID: ");
+    output.append(Arrays.toString(messageID));
+    output.append("\n");
+    output.append("}\n");
+    return output.toString();
+  }
+}
+public static class MessagesClusterMessagePresentedEvent {
+  public byte[] messageID;
+  public MessagesClusterMessagePresentedEvent(
+    byte[] messageID
+  ) {
+    this.messageID = messageID;
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder output = new StringBuilder();
+    output.append("MessagesClusterMessagePresentedEvent {\n");
+    output.append("\tmessageID: ");
+    output.append(Arrays.toString(messageID));
+    output.append("\n");
+    output.append("}\n");
+    return output.toString();
+  }
+}
+public static class MessagesClusterMessageCompleteEvent {
+  public byte[] messageID;
+  public Long timestamp;
+  public @Nullable Long responseID;
+  public @Nullable String reply;
+  public @Nullable Integer futureMessagesPref;
+  public MessagesClusterMessageCompleteEvent(
+    byte[] messageID,
+    Long timestamp,
+    @Nullable Long responseID,
+    @Nullable String reply,
+    @Nullable Integer futureMessagesPref
+  ) {
+    this.messageID = messageID;
+    this.timestamp = timestamp;
+    this.responseID = responseID;
+    this.reply = reply;
+    this.futureMessagesPref = futureMessagesPref;
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder output = new StringBuilder();
+    output.append("MessagesClusterMessageCompleteEvent {\n");
+    output.append("\tmessageID: ");
+    output.append(Arrays.toString(messageID));
+    output.append("\n");
+    output.append("\ttimestamp: ");
+    output.append(timestamp);
+    output.append("\n");
+    output.append("\tresponseID: ");
+    output.append(responseID);
+    output.append("\n");
+    output.append("\treply: ");
+    output.append(reply);
+    output.append("\n");
+    output.append("\tfutureMessagesPref: ");
+    output.append(futureMessagesPref);
+    output.append("\n");
+    output.append("}\n");
+    return output.toString();
+  }
+}
 public static class DoorLockClusterDoorLockAlarmEvent {
   public Integer alarmCode;
   public DoorLockClusterDoorLockAlarmEvent(

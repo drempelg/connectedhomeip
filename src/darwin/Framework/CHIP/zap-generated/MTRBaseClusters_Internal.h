@@ -236,6 +236,10 @@
 @property (nonatomic, strong, readonly) MTRBaseDevice * device;
 @end
 
+@interface MTRBaseClusterMessages ()
+@property (nonatomic, strong, readonly) MTRBaseDevice * device;
+@end
+
 @interface MTRBaseClusterDoorLock ()
 @property (nonatomic, strong, readonly) MTRBaseDevice * device;
 @end

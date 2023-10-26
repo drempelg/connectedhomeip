@@ -489,6 +489,14 @@ void emberAfHepaFilterMonitoringClusterInitCallback(chip::EndpointId endpoint);
  */
 void emberAfActivatedCarbonFilterMonitoringClusterInitCallback(chip::EndpointId endpoint);
 
+/** @brief Messages Cluster Init
+ *
+ * Cluster Init
+ *
+ * @param endpoint    Endpoint that is being initialized
+ */
+void emberAfMessagesClusterInitCallback(chip::EndpointId endpoint);
+
 /** @brief Door Lock Cluster Init
  *
  * Cluster Init
@@ -5219,6 +5227,84 @@ void emberAfActivatedCarbonFilterMonitoringClusterServerTickCallback(chip::Endpo
 void emberAfActivatedCarbonFilterMonitoringClusterClientTickCallback(chip::EndpointId endpoint);
 
 //
+// Messages Cluster
+//
+
+/** @brief Messages Cluster Server Init
+ *
+ * Server Init
+ *
+ * @param endpoint    Endpoint that is being initialized
+ */
+void emberAfMessagesClusterServerInitCallback(chip::EndpointId endpoint);
+
+/** @brief Messages Cluster Server Shutdown
+ *
+ * Server Shutdown
+ *
+ * @param endpoint    Endpoint that is being shutdown
+ */
+void MatterMessagesClusterServerShutdownCallback(chip::EndpointId endpoint);
+
+/** @brief Messages Cluster Client Init
+ *
+ * Client Init
+ *
+ * @param endpoint    Endpoint that is being initialized
+ */
+void emberAfMessagesClusterClientInitCallback(chip::EndpointId endpoint);
+
+/** @brief Messages Cluster Server Attribute Changed
+ *
+ * Server Attribute Changed
+ *
+ * @param attributePath Concrete attribute path that changed
+ */
+void MatterMessagesClusterServerAttributeChangedCallback(const chip::app::ConcreteAttributePath & attributePath);
+
+/** @brief Messages Cluster Server Pre Attribute Changed
+ *
+ * Server Pre Attribute Changed
+ *
+ * @param attributePath Concrete attribute path to be changed
+ * @param attributeType Attribute type
+ * @param size          Attribute size
+ * @param value         Attribute value
+ */
+chip::Protocols::InteractionModel::Status
+MatterMessagesClusterServerPreAttributeChangedCallback(const chip::app::ConcreteAttributePath & attributePath,
+                                                       EmberAfAttributeType attributeType, uint16_t size, uint8_t * value);
+
+/** @brief Messages Cluster Client Pre Attribute Changed
+ *
+ * Client Pre Attribute Changed
+ *
+ * @param attributePath Concrete attribute path to be changed
+ * @param attributeType Attribute type
+ * @param size          Attribute size
+ * @param value         Attribute value
+ */
+chip::Protocols::InteractionModel::Status
+MatterMessagesClusterClientPreAttributeChangedCallback(const chip::app::ConcreteAttributePath & attributePath,
+                                                       EmberAfAttributeType attributeType, uint16_t size, uint8_t * value);
+
+/** @brief Messages Cluster Server Tick
+ *
+ * Server Tick
+ *
+ * @param endpoint  Endpoint that is being served
+ */
+void emberAfMessagesClusterServerTickCallback(chip::EndpointId endpoint);
+
+/** @brief Messages Cluster Client Tick
+ *
+ * Client Tick
+ *
+ * @param endpoint  Endpoint that is being served
+ */
+void emberAfMessagesClusterClientTickCallback(chip::EndpointId endpoint);
+
+//
 // Door Lock Cluster
 //
 
@@ -8851,6 +8937,18 @@ bool emberAfDishwasherAlarmClusterResetCallback(
 bool emberAfDishwasherAlarmClusterModifyEnabledAlarmsCallback(
     chip::app::CommandHandler * commandObj, const chip::app::ConcreteCommandPath & commandPath,
     const chip::app::Clusters::DishwasherAlarm::Commands::ModifyEnabledAlarms::DecodableType & commandData);
+/**
+ * @brief Messages Cluster PresentMessagesRequest Command callback (from client)
+ */
+bool emberAfMessagesClusterPresentMessagesRequestCallback(
+    chip::app::CommandHandler * commandObj, const chip::app::ConcreteCommandPath & commandPath,
+    const chip::app::Clusters::Messages::Commands::PresentMessagesRequest::DecodableType & commandData);
+/**
+ * @brief Messages Cluster CancelMessagesRequest Command callback (from client)
+ */
+bool emberAfMessagesClusterCancelMessagesRequestCallback(
+    chip::app::CommandHandler * commandObj, const chip::app::ConcreteCommandPath & commandPath,
+    const chip::app::Clusters::Messages::Commands::CancelMessagesRequest::DecodableType & commandData);
 /**
  * @brief Door Lock Cluster LockDoor Command callback (from client)
  */
