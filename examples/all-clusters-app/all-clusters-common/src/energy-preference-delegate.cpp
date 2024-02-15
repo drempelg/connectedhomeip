@@ -29,7 +29,7 @@ struct EPrefDelegate : public Delegate
     EPrefDelegate();
     virtual ~EPrefDelegate();
 
-    CHIP_ERROR GetEnergyBalanceAtIndex(chip::EndpointId aEndpoint, size_t aIndex,  chip::Percent & aOutStep, chip::MutableCharSpan & aOutLabel) override;
+    CHIP_ERROR GetEnergyBalanceAtIndex(chip::EndpointId aEndpoint, size_t aIndex, chip::Percent & aOutStep, chip::MutableCharSpan & aOutLabel) override;
     CHIP_ERROR GetEnergyPriorityAtIndex(chip::EndpointId aEndpoint, size_t aIndex, EnergyPriorityEnum & priority) override;
     CHIP_ERROR GetLowPowerModeSensitivityAtIndex(chip::EndpointId aEndpoint, size_t aIndex, chip::Percent & aOutStep, chip::MutableCharSpan & aOutLabel) override;
 

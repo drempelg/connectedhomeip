@@ -127,7 +127,7 @@ CHIP_ERROR EnergyPrefAttrAccess::Read(const ConcreteReadAttributePath & aPath, A
                 chip::MutableCharSpan label(buffer);
                 size_t index   = 0;
                 CHIP_ERROR err = CHIP_NO_ERROR;
-                while ((err = gsDelegate->GetLowPowerModeSensitivityAtIndex(endpoint, index, step,label)) == CHIP_NO_ERROR)
+                while ((err = gsDelegate->GetLowPowerModeSensitivityAtIndex(endpoint, index, step, label)) == CHIP_NO_ERROR)
                 {
                     BalanceStruct::Type balance = {step, Optional<CharSpan>(label)};
                     ReturnErrorOnFailure(encoder.Encode(balance));
